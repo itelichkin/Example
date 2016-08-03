@@ -1,6 +1,7 @@
 $(function () {
     $('span.unfavorite').click(function () {
-        $(this).toggleClass('favorite');
+
+        $(this).toggleClass('favorite glyphicon-heart glyphicon-heart-empty');
     });
 });
 
@@ -17,25 +18,35 @@ $(function () {
         $(this).parent().toggleClass("open");
     });
 });
-$(function () {
-    $(document).mouseup(function (e){
-        var div = $(".dropdown-menu" || ".little" || ".big" );
-        if (!div.is(e.target)
-            && div.has(e.target).length === 0) {
-            div.parent().removeClass('open');
-        }
-    });
-});
-$(function () {
-    $(document).mouseup(function (e){
-        var div = $(".little" || ".big" );
-        if (!div.is(e.target)
-            && div.has(e.target).length === 0) {
-            div.parent().removeClass('open');
-        }
-    });
-});
 
+
+$(function () {
+    $(document).mouseup(function (e) {
+        var div = $(".dropdown-menu");
+        if (!div.is(e.target)
+            && div.has(e.target).length === 0) {
+            div.parent().removeClass('open');
+        }
+    });
+});
+$(function () {
+    $(document).mouseup(function (e) {
+        var div = $(".little");
+        if (!div.is(e.target)
+            && div.has(e.target).length === 0) {
+            div.parent().removeClass('open');
+        }
+    });
+});
+$(function () {
+    $(document).mouseup(function (e) {
+        var div = $(".big");
+        if (!div.is(e.target)
+            && div.has(e.target).length === 0) {
+            div.parent().removeClass('open');
+        }
+    });
+});
 
 $(function () {
     $('div.filter a').click(function () {
@@ -53,3 +64,29 @@ $(function () {
     });
 });
 
+$(function () {
+    $('li.random_price input.input_from').click(function () {
+        $('label').addClass("input_from").removeClass("input_to");
+        var place_from = this;
+        $('label.input_from').click(function () {
+            if ($(this).is('.input_from')) {
+                $('label').removeClass("input_from");
+                var text_from = $(this).text();
+                $(place_from).attr("placeholder", text_from);
+            }
+        });
+    });
+});
+$(function () {
+    $('li.random_price input.input_to').click(function () {
+        $('label').addClass("input_to").removeClass("input_from");
+        var place_to = this;
+        $('label.input_to').click(function () {
+            if ($(this).is('.input_to')) {
+                $('label').removeClass("input_to");
+                var text_up = $(this).text();
+                $(place_to).attr("placeholder", text_up);
+            }
+        });
+    });
+});
