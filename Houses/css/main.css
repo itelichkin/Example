@@ -1005,3 +1005,21 @@ p.sort_by {
         top: 0;
     }
 }
+@media screen and (max-width: 768px) {
+    .navbar-toggle {
+        color: white;
+    }
+    .navbar-collapse.in {
+        overflow-y: inherit;
+    }
+    #logo .main_search form {
+        margin: 0 0;
+    }
+    #logo form.navbar-form input {
+        display: inline-block;
+        width: 365px;
+    }
+    #logo form.navbar-form span.glyphicon {
+        top: 3px;
+    }
+}
