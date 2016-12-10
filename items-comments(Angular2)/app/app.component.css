@@ -1,0 +1,39 @@
+main {
+    display: block;
+    height: 100%;
+}
+#menu {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: #2B2F3E;
+
+}
+
+#menu h1, #menu ul {
+    margin-left: 30px;
+}
+#menu ul li {
+margin-top: 50px;
+}
+#menu ul li:hover {
+    background-color: #FF2F5A;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+#menu ul li.selected {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+#items {
+    float: left;
+    width: 80%;
+    height: 100%;
+    padding: 30px 20px 30px 30px;
+}
+items-app {
+    display: block;
+}
